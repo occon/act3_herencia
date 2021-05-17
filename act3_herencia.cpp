@@ -27,6 +27,17 @@ class Estudiante: public Persona{
         string carrera;
 };
 
+class Maestro: public Persona{
+    public:
+        Maestro();
+        Maestro(string, int, string);
+        string getDepto();
+        void setDepto(string);
+        void muestraDatos();
+    private:
+        string depto;
+};
+
 // metodos Persona
 
 Persona::Persona(){
@@ -65,6 +76,26 @@ Estudiante::Estudiante(string n, int e, string c): Persona(n,e){
     carrera = c;
 };
 
+//metodos Maestro
+Maestro::Maestro(): Persona(){
+    depto = "-";
+}
+
+Maestro::Maestro(string n , int e, string d): Persona(n, e){
+    nombre = n;
+    edad = e; 
+    depto = d;
+}
+
+//Getters
+string Maestro::getDepto(){return depto;}
+//Setters
+void Maestro::setDepto(string _depto){depto= _depto;}
+
+//Imprime datos
+void Maestro::muestraDatos(){
+    cout << "Departamento: " << depto ;
+};
 //main
 int main(){
 
