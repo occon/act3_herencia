@@ -8,9 +8,9 @@ class Persona{
         Persona();
         Persona(string, int);
         string getNombre();
-        void setNombre();
+        void setNombre(string);
         int getEdad();
-        void setEdad();
+        void setEdad(int);
     protected:
         string nombre;
         int edad;
@@ -21,15 +21,13 @@ class Estudiante: public Persona{
         Estudiante();
         Estudiante(string, int, string);
         string getCarrera();
-        void setCarrera();
+        void setCarrera(string);
         void muestraDatos();
     private:
         string carrera;
 };
 
 // metodos Persona
-string Persona::getNombre(){return nombre;}
-int Persona::getEdad(){return edad;}
 
 Persona::Persona(){
     nombre = "nobody";
@@ -39,6 +37,15 @@ Persona::Persona(string n, int e){
     nombre = n;
     edad = e;
 };
+
+//Getters
+string Persona::getNombre(){return nombre;}
+int Persona::getEdad(){return edad;}
+
+//Setters
+void Persona::setNombre(string _nombre){nombre=_nombre;}
+void Persona::setEdad(int _edad){edad=_edad;}
+
 
 // metodos Estudiante
 string Estudiante::getCarrera(){return carrera;}
@@ -56,4 +63,10 @@ Estudiante::Estudiante(string n, int e, string c): Persona(n,e){
     nombre = n;
     edad = e;
     carrera = c;
+};
+
+//main
+int main(){
+
+    return 0;
 };
